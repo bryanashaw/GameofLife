@@ -10,7 +10,7 @@ public class Board : MonoBehaviour
 
     private Cell[,] _boardofCells;
 
-    public event Action onNextGeneration;
+    public static event Action OnNextGeneration;
 
 
     // Start is called before the first frame update
@@ -112,7 +112,7 @@ public class Board : MonoBehaviour
                         numofNeighbors++;
                     }
                 }
-
+                
                 _boardofCells[x, z].SetNeighbors(numofNeighbors);
             }
         }
@@ -122,6 +122,7 @@ public class Board : MonoBehaviour
     void Update()
     {
        CountNeighbors();
-       onNextGeneration?.Invoke();
+       
+       OnNextGeneration?.Invoke();
     }
 }

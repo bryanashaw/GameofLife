@@ -6,7 +6,7 @@ public class Cell : MonoBehaviour
     [SerializeField] private Material deadMaterial;
 
     private bool isAlive;
-    private int numofNeighbors;
+    private int _numofNeighbors;
     private MeshRenderer _meshRenderer;
 
 
@@ -18,12 +18,12 @@ public class Cell : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<Board>().onNextGeneration += PopulationControl;
+        Board.OnNextGeneration += PopulationControl;
     }
 
     private void OnDisable()
     {
-        GetComponent<Board>().onNextGeneration -= PopulationControl;
+        Board.OnNextGeneration -= PopulationControl;
     }
 
     public bool getLifeStatus()
@@ -33,23 +33,23 @@ public class Cell : MonoBehaviour
 
     public void SetNeighbors(int num)
     {
-        numofNeighbors = num;
+        _numofNeighbors = num;
     }
 
     private void PopulationControl()
     {
         if (isAlive)
         {
-            if (numofNeighbors != 2 && numofNeighbors != 3)
+            if (_numofNeighbors != 2 && _numofNeighbors != 3)
             {
-                isAlive = false;
+                SetLifeStatus(false);
             }
         }
         else
         {
-            if (numofNeighbors == 3)
+            if (_numofNeighbors == 3)
             {
-                isAlive = true;
+                SetLifeStatus(true);
             }
         }
     }

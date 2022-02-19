@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 917099703}
   - component: {fileID: 917099702}
   - component: {fileID: 917099705}
+  - component: {fileID: 917099706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -160,7 +161,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.35154855, g: 0.48999244, b: 0.7075472, a: 0}
+  m_BackGroundColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -240,6 +241,47 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &917099706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917099701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivity: 60
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 1
 --- !u!1 &1519929790
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +382,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 413945621041569419, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
+      propertyPath: boardWidth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 413945621041569419, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
+      propertyPath: boardHeight
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8851587554267399398, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
