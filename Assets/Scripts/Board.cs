@@ -9,6 +9,7 @@ public class Board : MonoBehaviour
     [SerializeField] private Cell cellPrefab;
 
     private Cell[,] _boardofCells;
+    private bool _gamePaused;
 
     public static event Action OnNextGeneration;
 
@@ -17,6 +18,31 @@ public class Board : MonoBehaviour
     void Start()
     {
         PlaceCells();
+    }
+
+    private void UserInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            var rayCast = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            _gamePaused = true;
+
+            if (Physics.Raycast(rayCast, out var raycastHit))
+            {
+                var target = raycastHit.transform;
+                if (target.GetComponent<Cell>())
+                {
+                    var cell = target.GetComponent<Cell>();
+                    cell.SelectedbyMouse();
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _gamePaused = false;
+        }
     }
 
     private void PlaceCells()
@@ -112,7 +138,7 @@ public class Board : MonoBehaviour
                         numofNeighbors++;
                     }
                 }
-                
+
                 _boardofCells[x, z].SetNeighbors(numofNeighbors);
             }
         }
@@ -121,8 +147,13 @@ public class Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       CountNeighbors();
-       
-       OnNextGeneration?.Invoke();
+        if (!_gamePaused)
+        {
+            CountNeighbors();
+
+            OnNextGeneration?.Invoke();
+        }
+
+        UserInput();
     }
 }

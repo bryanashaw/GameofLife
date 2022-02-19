@@ -36,6 +36,11 @@ public class Cell : MonoBehaviour
         _numofNeighbors = num;
     }
 
+    public void SelectedbyMouse()
+    {
+        SetLifeStatus(true);
+    }
+
     private void PopulationControl()
     {
         if (isAlive)
