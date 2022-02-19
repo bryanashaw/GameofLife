@@ -7,7 +7,14 @@ public class Cell : MonoBehaviour
 
     private bool isAlive;
     private int numofNeighbors;
+    private MeshRenderer _meshRenderer;
 
+
+    private void Awake()
+    {
+        _meshRenderer = GetComponent<MeshRenderer>();
+        RandomizeLife();
+    }
 
     private void OnEnable()
     {
@@ -29,11 +36,6 @@ public class Cell : MonoBehaviour
         numofNeighbors = num;
     }
 
-    // private void SetLifeStatus(bool status)
-    // {
-    //     isAlive = status;
-    // }
-
     private void PopulationControl()
     {
         if (isAlive)
@@ -49,6 +51,33 @@ public class Cell : MonoBehaviour
             {
                 isAlive = true;
             }
+        }
+    }
+
+    private void SetLifeStatus(bool status)
+    {
+        isAlive = status;
+        if (isAlive)
+        {
+            _meshRenderer.material = aliveMaterial;
+        }
+        else
+        {
+            _meshRenderer.material = deadMaterial;
+        }
+    }
+
+    private void RandomizeLife()
+    {
+        var randNumber = Random.Range(0, 100);
+
+        if (randNumber > 50)
+        {
+            SetLifeStatus(true);
+        }
+        else
+        {
+            SetLifeStatus(false);
         }
     }
 }

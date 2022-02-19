@@ -33,7 +33,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void CheckNeighbors()
+    private void CountNeighbors()
     {
         for (int z = 0; z < boardHeight; z++)
         {
@@ -121,5 +121,7 @@ public class Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       CountNeighbors();
+       onNextGeneration?.Invoke();
     }
 }
