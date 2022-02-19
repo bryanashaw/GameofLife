@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4260754106363142055}
   - component: {fileID: 1154709030655340892}
   - component: {fileID: 7339765151842245759}
-  - component: {fileID: 3472394213677962280}
   - component: {fileID: -7073120930209504989}
+  - component: {fileID: 8529509214720382380}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5974428632575606396}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7339765151842245759
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3472394213677962280
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5974428632575606396}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-7073120930209504989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aliveMaterial: {fileID: 2100000, guid: 10c62c289bb0ca84f92fe4a20e09bbac, type: 2}
   deadMaterial: {fileID: 2100000, guid: 35576ed72f839944e8be51023320b774, type: 2}
+--- !u!135 &8529509214720382380
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974428632575606396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

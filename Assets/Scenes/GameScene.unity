@@ -384,11 +384,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 413945621041569419, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
       propertyPath: boardWidth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 413945621041569419, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
       propertyPath: boardHeight
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8851587554267399398, guid: 81e85969aca356f478c9ab00bac8d0bd, type: 3}
       propertyPath: m_RootOrder

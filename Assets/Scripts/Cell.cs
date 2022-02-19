@@ -76,7 +76,7 @@ public class Cell : MonoBehaviour
     {
         var randNumber = Random.Range(0, 100);
 
-        if (randNumber > 50)
+        if (randNumber > 90)
         {
             SetLifeStatus(true);
         }

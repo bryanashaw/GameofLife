@@ -18,6 +18,7 @@ public class Board : MonoBehaviour
     void Start()
     {
         PlaceCells();
+        _gamePaused = true;
     }
 
     private void UserInput()
@@ -42,6 +43,11 @@ public class Board : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _gamePaused = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            _gamePaused = !_gamePaused;
         }
     }
 
