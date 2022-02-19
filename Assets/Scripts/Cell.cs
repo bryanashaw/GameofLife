@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
@@ -20,7 +19,12 @@ public class Cell : MonoBehaviour
         GetComponent<Board>().onNextGeneration -= PopulationControl;
     }
 
-    private void SetNeighbors(int num)
+    public bool getLifeStatus()
+    {
+        return isAlive;
+    }
+
+    public void SetNeighbors(int num)
     {
         numofNeighbors = num;
     }
