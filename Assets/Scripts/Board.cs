@@ -28,6 +28,10 @@ public class Board : MonoBehaviour
 
     private void UserInput()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (Input.GetMouseButton(0))
         {
             var rayCast = Camera.main.ScreenPointToRay(Input.mousePosition);
