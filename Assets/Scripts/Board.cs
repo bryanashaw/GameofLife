@@ -1,6 +1,7 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Board : MonoBehaviour
 {
@@ -52,6 +53,11 @@ public class Board : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             _gamePaused = !_gamePaused;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("GameScene");
         }
     }
 
