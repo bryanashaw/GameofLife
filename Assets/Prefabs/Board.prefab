@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd138b6406506b4b833f60ec0db982c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridHeight: 100
-  gridWidth: 100
+  boardHeight: 100
+  boardWidth: 100
   cellPrefab: {fileID: -7073120930209504989, guid: 2fbe8d84569533249960b995b113b660, type: 3}
+  tilePrefab: {fileID: 5552509061543497093, guid: d7b34671912e66749a0ef8c97eddd08a, type: 3}

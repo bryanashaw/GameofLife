@@ -6,10 +6,14 @@ public class Board : MonoBehaviour
 {
     [SerializeField] private int boardHeight = 100;
     [SerializeField] private int boardWidth = 100;
+    [SerializeField] private float gameSpeed = 0.1f;
+
     [SerializeField] private Cell cellPrefab;
 
+
     private Cell[,] _boardofCells;
-    private bool _gamePaused;
+    private float internalTimer;
+    private bool _gamePaused = true;
 
     public static event Action OnNextGeneration;
 
@@ -18,7 +22,7 @@ public class Board : MonoBehaviour
     void Start()
     {
         PlaceCells();
-        _gamePaused = true;
+        // _gamePaused = true;
     }
 
     private void UserInput()
@@ -153,13 +157,21 @@ public class Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UserInput();
         if (!_gamePaused)
         {
-            CountNeighbors();
+            if (internalTimer >= gameSpeed)
+            {
+                internalTimer = 0f;
 
-            OnNextGeneration?.Invoke();
+                CountNeighbors();
+
+                OnNextGeneration?.Invoke();
+            }
+            else
+            {
+                internalTimer += Time.deltaTime;
+            }
         }
-
-        UserInput();
     }
 }
